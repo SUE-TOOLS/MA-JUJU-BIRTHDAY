@@ -13,7 +13,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
+font-family:Arial,sans-serif;
 }
 
 body{
@@ -21,8 +21,8 @@ body{
 background:
 linear-gradient(
 135deg,
-#ffd9ea,
-#ffeef5
+#ffd6e8,
+#fff0f6
 );
 
 overflow:hidden;
@@ -38,7 +38,9 @@ align-items:center;
 }
 
 
-.hearts{
+/* الخلفية */
+
+.bg{
 
 position:absolute;
 
@@ -46,24 +48,26 @@ width:100%;
 
 height:100%;
 
+overflow:hidden;
+
 }
 
 
-.heart{
+.float{
 
 position:absolute;
 
-font-size:25px;
+font-size:30px;
 
 animation:
-float 10s linear infinite;
+move 12s infinite linear;
 
-opacity:.6;
+opacity:.7;
 
 }
 
 
-@keyframes float{
+@keyframes move{
 
 0%{
 
@@ -72,32 +76,33 @@ translateY(100vh);
 
 }
 
+
 100%{
 
 transform:
-translateY(-100vh);
+translateY(-120vh);
 
 }
 
+
 }
 
 
+/* صندوق الهدية */
 
 .gift{
 
-width:250px;
+width:220px;
 
-height:250px;
+height:220px;
 
-background:
+background:#ff6fa8;
 
-#ff76a8;
-
-position:relative;
+border-radius:25px;
 
 cursor:pointer;
 
-border-radius:20px;
+position:relative;
 
 box-shadow:
 
@@ -108,15 +113,16 @@ transition:1s;
 }
 
 
+
 .ribbon1{
 
-position:absolute;
+width:35px;
+
+height:100%;
 
 background:white;
 
-width:40px;
-
-height:100%;
+position:absolute;
 
 left:50%;
 
@@ -126,15 +132,16 @@ translateX(-50%);
 }
 
 
+
 .ribbon2{
 
-position:absolute;
+height:35px;
+
+width:100%;
 
 background:white;
 
-height:40px;
-
-width:100%;
+position:absolute;
 
 top:50%;
 
@@ -147,18 +154,34 @@ translateY(-50%);
 
 .open{
 
+opacity:0;
+
 transform:
 scale(.1);
-
-opacity:0;
 
 }
 
 
 
+/* الكارت */
+
 .card{
 
 display:none;
+
+position:absolute;
+
+top:50%;
+
+left:50%;
+
+transform:
+
+translate(
+-50%,
+-50%
+);
+
 
 background:
 
@@ -166,36 +189,30 @@ rgba(
 255,
 255,
 255,
-0.95
+0.97
 );
 
-padding:
 
-40px;
+width:85%;
 
-border-radius:
+max-width:900px;
 
-30px;
+height:75vh;
 
-width:
+overflow:auto;
 
-85%;
+padding:40px;
 
-max-width:
-
-900px;
-
-height:
-
-80vh;
-
-overflow:
-
-auto;
+border-radius:35px;
 
 box-shadow:
 
-0 0 40px pink;
+0 0 50px rgba(
+255,
+105,
+180,
+0.3
+);
 
 text-align:center;
 
@@ -203,19 +220,19 @@ text-align:center;
 
 
 
-.card h1{
+h1{
+
+font-size:50px;
 
 color:#ff4d90;
 
-margin-bottom:30px;
-
-font-size:50px;
+margin-bottom:40px;
 
 }
 
 
 
-.card p{
+p{
 
 font-size:22px;
 
@@ -227,41 +244,110 @@ color:#444;
 
 
 
-.type{
+/* التاريخ */
 
-border-right:
+.date{
 
-3px solid pink;
+display:none;
 
-white-space:
+position:absolute;
 
-pre-line;
+bottom:20px;
 
-overflow:hidden;
+left:50%;
+
+transform:
+
+translateX(-50%);
+
+
+padding:
+
+18px 40px;
+
+
+background:
+
+rgba(
+255,
+255,
+255,
+0.6
+);
+
+
+backdrop-filter:
+
+blur(10px);
+
+
+border-radius:
+
+50px;
+
+
+font-size:
+
+28px;
+
+
+font-weight:
+
+bold;
+
+
+color:
+
+#ff4d90;
+
+
+box-shadow:
+
+0 0 25px pink;
+
 
 animation:
 
-typing 10s steps(600);
+glow 2s infinite;
 
 }
 
 
 
-@keyframes typing{
+@keyframes glow{
 
-from{
 
-width:0;
+0%{
 
-}
+transform:
+translateX(-50%)
 
-to{
-
-width:100%;
+scale(1);
 
 }
 
+
+50%{
+
+transform:
+translateX(-50%)
+
+scale(1.08);
+
 }
+
+
+100%{
+
+transform:
+translateX(-50%)
+
+scale(1);
+
+}
+
+}
+
 
 
 </style>
@@ -269,27 +355,33 @@ width:100%;
 </head>
 
 
-
 <body>
 
 
-<div class="hearts">
 
-<div class="heart" style="left:10%">💗</div>
+<div class="bg">
 
-<div class="heart" style="left:30%">🧸</div>
+<div class="float" style="left:10%">🧸</div>
 
-<div class="heart" style="left:50%">🌸</div>
+<div class="float" style="left:20%">🌸</div>
 
-<div class="heart" style="left:70%">🎁</div>
+<div class="float" style="left:35%">🎁</div>
 
-<div class="heart" style="left:90%">💕</div>
+<div class="float" style="left:50%">💗</div>
+
+<div class="float" style="left:70%">🧸</div>
+
+<div class="float" style="left:80%">🎀</div>
+
+<div class="float" style="left:90%">🌹</div>
+
 
 </div>
 
 
 
-<div id="gift"
+<div
+id="gift"
 
 class="gift"
 
@@ -306,9 +398,11 @@ onclick="openGift()">
 
 
 
-<div class="card"
+<div
+id="card"
 
-id="card">
+class="card">
+
 
 
 <h1>
@@ -319,7 +413,7 @@ Happy Birthday To My Beautiful Girl ❤️🎂
 
 
 
-<p class="type">
+<p>
 
 
 Happy birthday to my beautiful girl 
@@ -338,17 +432,26 @@ I love you more than words, more than distance, more than time could ever explai
 </p>
 
 
+
 </div>
 
 
 
-<audio
-id="music"
-loop>
+<div
+id="date"
 
-<source src="music.mp3">
+class="date">
 
-</audio>
+
+✨🎀🌸🧸💗
+
+26 / 5 / 2026
+
+💗🧸🌸🎀✨
+
+
+</div>
+
 
 
 
@@ -360,11 +463,15 @@ function openGift(){
 
 document
 
-.getElementById("gift")
+.getElementById(
+"gift"
+)
 
 .classList
 
-.add("open");
+.add(
+"open"
+);
 
 
 
@@ -373,22 +480,32 @@ setTimeout(()=>{
 
 document
 
-.getElementById("card")
+.getElementById(
+"card"
+)
 
 .style
 
-.display="block";
+.display=
+"block";
 
 
 
 document
 
-.getElementById("music")
+.getElementById(
+"date"
+)
 
-.play();
+.style
+
+.display=
+"block";
+
 
 
 },900);
+
 
 
 }
@@ -396,6 +513,7 @@ document
 
 
 </script>
+
 
 
 </body>
