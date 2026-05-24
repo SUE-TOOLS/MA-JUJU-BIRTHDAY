@@ -1,107 +1,265 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <meta charset="UTF-8">
+
 <title>Happy Birthday ❤️</title>
 
 <style>
 
-body{
+*{
 margin:0;
 padding:0;
-background:#ffd6e7;
+box-sizing:border-box;
 font-family:Arial;
-overflow-x:hidden;
 }
 
-.background{
-position:fixed;
-width:100%;
-height:100%;
-z-index:-1;
+body{
+
+background:
+linear-gradient(
+135deg,
+#ffd9ea,
+#ffeef5
+);
+
+overflow:hidden;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
 }
 
-.item{
+
+.hearts{
+
 position:absolute;
-font-size:30px;
-opacity:.7;
-animation:float 6s infinite;
+
+width:100%;
+
+height:100%;
+
 }
+
+
+.heart{
+
+position:absolute;
+
+font-size:25px;
+
+animation:
+float 10s linear infinite;
+
+opacity:.6;
+
+}
+
 
 @keyframes float{
+
 0%{
-transform:translateY(0);
+
+transform:
+translateY(100vh);
+
 }
-50%{
-transform:translateY(-20px);
-}
+
 100%{
-transform:translateY(0);
-}
+
+transform:
+translateY(-100vh);
+
 }
 
-.card{
+}
 
-width:80%;
-max-width:900px;
+
+
+.gift{
+
+width:250px;
+
+height:250px;
+
+background:
+
+#ff76a8;
+
+position:relative;
+
+cursor:pointer;
+
+border-radius:20px;
+
+box-shadow:
+
+0 0 40px pink;
+
+transition:1s;
+
+}
+
+
+.ribbon1{
+
+position:absolute;
 
 background:white;
 
-margin:50px auto;
+width:40px;
 
-padding:40px;
+height:100%;
 
-border-radius:30px;
+left:50%;
+
+transform:
+translateX(-50%);
+
+}
+
+
+.ribbon2{
+
+position:absolute;
+
+background:white;
+
+height:40px;
+
+width:100%;
+
+top:50%;
+
+transform:
+translateY(-50%);
+
+}
+
+
+
+.open{
+
+transform:
+scale(.1);
+
+opacity:0;
+
+}
+
+
+
+.card{
+
+display:none;
+
+background:
+
+rgba(
+255,
+255,
+255,
+0.95
+);
+
+padding:
+
+40px;
+
+border-radius:
+
+30px;
+
+width:
+
+85%;
+
+max-width:
+
+900px;
+
+height:
+
+80vh;
+
+overflow:
+
+auto;
 
 box-shadow:
-0 0 30px rgba(0,0,0,.1);
+
+0 0 40px pink;
 
 text-align:center;
 
 }
 
 
-h1{
 
-color:#ff4f8a;
+.card h1{
+
+color:#ff4d90;
+
+margin-bottom:30px;
+
 font-size:50px;
 
 }
 
 
-p{
+
+.card p{
 
 font-size:22px;
 
-line-height:1.9;
+line-height:2;
 
 color:#444;
 
 }
 
 
-button{
 
-padding:20px;
+.type{
 
-background:#ff6fa5;
+border-right:
 
-border:none;
+3px solid pink;
 
-color:white;
+white-space:
 
-font-size:20px;
+pre-line;
 
-border-radius:20px;
+overflow:hidden;
 
-cursor:pointer;
+animation:
+
+typing 10s steps(600);
 
 }
 
 
-button:hover{
 
-background:#ff4d90;
+@keyframes typing{
+
+from{
+
+width:0;
+
+}
+
+to{
+
+width:100%;
+
+}
 
 }
 
@@ -110,82 +268,114 @@ background:#ff4d90;
 
 </head>
 
+
+
 <body>
 
 
-<div class="background">
+<div class="hearts">
 
-<div class="item" style="top:5%;left:10%">🧸</div>
+<div class="heart" style="left:10%">💗</div>
 
-<div class="item" style="top:20%;left:80%">🎁</div>
+<div class="heart" style="left:30%">🧸</div>
 
-<div class="item" style="top:40%;left:15%">🌸</div>
+<div class="heart" style="left:50%">🌸</div>
 
-<div class="item" style="top:70%;left:70%">🧸</div>
+<div class="heart" style="left:70%">🎁</div>
 
-<div class="item" style="top:80%;left:30%">🎀</div>
-
-<div class="item" style="top:50%;left:90%">🌹</div>
-
-<div class="item" style="top:10%;left:60%">🎁</div>
-
-<div class="item" style="top:85%;left:85%">🧸</div>
-
-<div class="item" style="top:25%;left:40%">🌷</div>
+<div class="heart" style="left:90%">💕</div>
 
 </div>
 
 
-<div class="card">
+
+<div id="gift"
+
+class="gift"
+
+onclick="openGift()">
+
+
+<div class="ribbon1"></div>
+
+<div class="ribbon2"></div>
+
+
+</div>
+
+
+
+
+<div class="card"
+
+id="card">
+
 
 <h1>
+
 Happy Birthday To My Beautiful Girl ❤️🎂
+
 </h1>
 
 
-<p>
 
-Today isn’t just your birthday, it’s the day someone truly special came into this world… someone who changed my life in ways I never thought were possible.
+<p class="type">
 
-You deserve every beautiful thing this world has to offer because your heart is one of the purest I’ve ever known.
 
-Thank you for staying by my side, for believing in me even when I struggled to believe in myself, for never giving up on us…
+Today isn’t just your birthday…
 
-I’ll forever be grateful to have a girlfriend like you.
+It’s the day someone truly special came into this world.
 
-You’re my comfort, my happiness, my safe place, and one of the best things that ever happened to me.
+Someone who changed my life in ways I never thought were possible.
 
-I hope this year brings you endless happiness, success, peace, and all the dreams you keep in your heart.
+You deserve every beautiful thing this world has to offer…
 
-I’ll always pray for your smile to stay bright because seeing you happy feels like home to me.
+Because your heart is one of the purest I’ve ever known.
 
-No matter what life throws at us…
 
-I’ll always care for you, support you, and love you with all I have.
+Thank you for staying beside me…
 
-Because loving you became my favorite thing.
+Believing in me…
 
-You deserve flowers every day 🌸
+Never giving up on us…
 
-Soft moments 💕
 
-Late-night laughs ✨
+You became my comfort,
 
-Warm hugs 🧸
+my happiness,
 
-And a love that never makes you question your worth.
+my safe place.
 
-Happy birthday to the most beautiful girl…
 
-Thank you for choosing me over and over again.
+I pray your smile never disappears…
 
-I’m proud of your strength…
+Because your happiness feels like home.
 
-Proud of who you are becoming…
 
-And proud to call you mine ❤️
+No matter what happens…
 
-Happy birthday, my girl…
+I’ll always care.
+
+Always support.
+
+Always love.
+
+
+Because loving you became my favorite thing ❤️
+
+
+You deserve:
+
+🌸 Flowers every day
+
+🧸 Warm hugs
+
+💕 Soft moments
+
+✨ Late night laughs
+
+
+Happy birthday…
 
 My favorite person…
 
@@ -193,23 +383,79 @@ My soft place…
 
 My forever ❤️
 
+
 I love you more than words…
 
 More than distance…
 
-More than time could ever explain ❤️🎉
+More than time could explain.
+
+
+Happy Birthday Princess ❤️🎉
+
 
 </p>
 
 
-<button>
-
-Forever Yours ❤️
-
-</button>
-
-
 </div>
+
+
+
+<audio
+id="music"
+loop>
+
+<source src="music.mp3">
+
+</audio>
+
+
+
+<script>
+
+
+function openGift(){
+
+
+document
+
+.getElementById("gift")
+
+.classList
+
+.add("open");
+
+
+
+setTimeout(()=>{
+
+
+document
+
+.getElementById("card")
+
+.style
+
+.display="block";
+
+
+
+document
+
+.getElementById("music")
+
+.play();
+
+
+},900);
+
+
+}
+
+
+
+</script>
+
 
 </body>
 
